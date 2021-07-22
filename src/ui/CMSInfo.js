@@ -4,7 +4,7 @@ import _ from 'underscore';
 
 class CMSInfo extends Component {
   render() {
-    var wellknownCMS = {
+    const wellknownCMS = {
       'typo3': <a href='https://typo3.org/' target='_blank' rel='noopener noreferrer'>Typo3</a>,
       'typo3-gcms': <a href='https://gruenes-cms.de/' target='_blank' rel='noopener noreferrer'>Grünes CMS (Typo3)</a>,
       'typo3-gruene': <a href='https://typo3-gruene.de/' target='_blank' rel='noopener noreferrer'>Typo3 Grüne</a>,
@@ -34,12 +34,12 @@ class CMSInfo extends Component {
       return placeholder;
     }
 
-    var url = Object.keys(this.props.site.checks.generator)[0];
+    const url = Object.keys(this.props.site.checks.generator)[0];
     if (!this.props.site.checks.generator[url]) {
       return placeholder;
     }
     
-    var label = this.props.site.checks.generator[url];
+    let label = this.props.site.checks.generator[url];
     if (typeof wellknownCMS[label] !== 'undefined') {
       label = wellknownCMS[label];
     }
